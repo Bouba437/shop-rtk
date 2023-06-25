@@ -17,13 +17,15 @@ function PhoneView() {
             <div className="container">
                 <img src={phone} alt="phone" />
                 <p> Disponibilité:
-                    <span className="count">{ phones }</span>
+                    <span className="count">{phones}</span>
                 </p>
                 <div className="btnContainer">
                     <button onClick={() => dispatch(phonesAction(phoneNum))}>Acheter</button>
-                    <input 
-                        type="number" 
-                        value={phoneNum} 
+                    <input
+                        type="number"
+                        min="1"
+                        max={phones}
+                        value={phoneNum}
                         onChange={e => setPhoneNum(e.target.value)}
                     />
                 </div>
@@ -32,13 +34,15 @@ function PhoneView() {
             <div className="container">
                 <img src={tablet} alt="tablet" />
                 <p> Disponibilité:
-                    <span className="count">{ tablets }</span>
+                    <span className="count">{tablets}</span>
                 </p>
                 <div className="btnContainer">
                     <button onClick={() => dispatch(tabletActions(tabletNum))}>Acheter</button>
-                    <input 
-                        type="number" 
-                        value={tabletNum} 
+                    <input
+                        type="number"
+                        min="1"
+                        max={tablets}
+                        value={tabletNum}
                         onChange={e => setTabletNum(e.target.value)}
                     />
                 </div>
